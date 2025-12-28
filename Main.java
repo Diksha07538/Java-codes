@@ -1,4 +1,4 @@
-public class Matrix {
+public class Main {
     public static void main(String[] args) {
 
         int[][] grid = {
