@@ -1,25 +1,37 @@
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
 
-        int[][] grid = {
-            {4, 3, 2, -1},
-            {3, 2, 1, -1},
-            {1, 1, -1, -2},
-            {-1, -1, -2, -3}
-        };
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter number of rows: ");
+        int m = sc.nextInt();
+
+        System.out.print("Enter number of columns: ");
+        int n = sc.nextInt();
+
+        int[][] grid = new int[m][n];
+
+        System.out.println("Enter matrix elements:");
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                grid[i][j] = sc.nextInt();
+            }
+        }
 
         int count = 0;
 
-        // Loop through matrix
-        for (int i = 0; i < grid.length; i++) {
-            for (int j = 0; j < grid[i].length; j++) {
+        // Count negative numbers
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
                 if (grid[i][j] < 0) {
                     count++;
                 }
             }
         }
 
-        System.out.println("Number of negative numbers: " + count);
+        System.out.println("Total negative numbers: " + count);
+        sc.close();
     }
 }
-
